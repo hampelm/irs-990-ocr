@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css" media="screen">
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        
+        $(document).ready(function(){
+            
+            var coords = {
+                'tl': null,
+                'br': null,
+                'addPoint': function(x,y) {
+                    if (this.tl == null) {
+                        this.tl = [x,y];
+                    }else if (this.br == null){
+                        this.br = [x,y];
+                    }else{
+                        this.tl = [x,y];
+                        this.br = null;
+                    };
+                }
+            }
+            
+            $("#taggable").click(function(e){
+              console.log(e);
+              var x = e.offsetX;
+              var y = e.offsetY;
+              coords.addPoint(x,y);
+              console.log(coords.tl);
+              console.log(coords.br);
+              
+            }); 
+        });
+
+        
+    </script>
+</head>
+
+<body>
+  <div class="content">
+      <div id="image_container">
+        <img id="taggable" alt="taggable_image" src="img/1.jpg" />
+      <div class="tags" id="tags"></div>
+      </div>
+  </div>`
+</body>
+</html>
