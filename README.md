@@ -16,14 +16,14 @@ You'll need:
 
 OCR Ahoy!
 ---------
-To get the first page of a PDF:  
-`pdftk pdfs/56-6060716_990PF_200609.pdf shuffle 1 output 52-606.pdf`
+Get the first page of a PDF:  
+`pdftk pdfs/52-6078041_990PF_200706.pdf shuffle 1 output 52-607.pdf`
 
-To turn a PDF into an image:  
-`./pdf-splitter 52-606.pdf 'img/%.d.jpg' 1200px`
+Turn that first page into an image:  
+`./pdf-splitter 52-607.pdf 'img/%.d.jpg' 1200px`
 
-To get sections of a page:  
+Get a section of the page to process:  
 `convert img/1.jpg -crop 490x20+185+225 img/1.crop.jpg`
 
-To process the image (you'll get a file named 1.txt):  
+OCR the image (you'll get a file named 1.txt):  
 `tesseract img/1.crop.jpg 1`
